@@ -45,6 +45,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: ease-out 0.2s;
 }
 
 .btn.sign > .fa-solid.fa-xmark{
@@ -55,6 +56,11 @@ body{
 .btn.sign > .fa-regular.fa-o{
     color: #f3a514;
     font-size: 90px;
+}
+
+
+.btn.sign:hover{
+    background-color: #0c1b4a;
 }
 
 
@@ -349,3 +355,4 @@ input[type="number"] {
     color: white;
     font-size: 12px;
 }
+
