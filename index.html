@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/f9957736a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="modal"></div>
+<dialog class="start-menu">
+    <div class="start-setting">
+        <h3>Please Choose Your Symbol</h3>
+        <div class="choose-player">
+            <div class="player x symbol">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="player o symbol">
+                <i class="fa-regular fa-o"></i>
+            </div>
+        </div>
+        <div class="setting">
+            <label for="round-input">Rounds:</label>
+            <input type="number" id="round-input" class="round-input" min="1" required>
+        </div>
+        <button class="start-btn">Start Game</button>
+    </div>
+</dialog>
+<div class="body">
+    <div class="game-board">
+        <div class="btn sign 0"></div>
+        <div class="btn sign 1"></div>
+        <div class="btn sign 2"></div>
+        <div class="btn sign 3"></div>
+        <div class="btn sign 4"></div>
+        <div class="btn sign 5"></div>
+        <div class="btn sign 6"></div>
+        <div class="btn sign 7"></div>
+        <div class="btn sign 8"></div>
+    </div>
+    <div class="setting-bar">
+        <div class="round-display"><i class="fa-solid fa-gamepad"></i><p class="round-p">Round</p></div>
+        <button class="restart"><i class="fa-solid fa-rotate-right"></i><p>Restart</p></button>
+    </div>
+    <div class="statistics">
+        <div class="display user 1"></div>
+        <div class="display user 2"></div>
+    </div>
+    <div class="turn-bar">
+        <p>Turn</p>
+    </div>
+</div>
+</body>
+</html>

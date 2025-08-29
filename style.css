@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #001022;
+}
+
+.body{
+    display: grid;
+    grid-template-rows: 5fr 1fr;
+    grid-template-columns: 5fr 1fr;
+    gap: 20px;
+    width: 550px;
+    height: 550px;
+}
+
+.body > div{
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    transition: ease-out 0.5s;
+}
+
+.game-board{
+    grid-row: 1;
+    grid-column: 1;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 15px;
+    gap: 15px;
+}
+
+.game-board > div{
+    border-radius: 10px;
+    background-color: #001239;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn.sign > .fa-solid.fa-xmark{
+    color: #14bff3;
+    font-size: 95px;
+}
+
+.btn.sign > .fa-regular.fa-o{
+    color: #f3a514;
+    font-size: 90px;
+}
+
+
+
+.setting-bar{
+    grid-row: 2;
+    grid-column: 1;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
+}
+
+.restart, .round-display{
+    outline: none;
+    border-radius: 5px;
+    flex: 1;
+    border: none;
+    background-color: #001239;
+    font-family: 'roboto mono', monospace;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: rgba(20, 255, 0, 0.4) 1px 1px 20px;
+    transition: ease-out 0.3s;
+}
+
+.restart:hover, .round-display:hover{
+    background-color: #001239;
+    color: #14ff00;
+}
+
+.fa-solid.fa-rotate-right{
+    margin-right: 10px;
+}
+
+.fa-solid.fa-gamepad{
+    margin-right: 10px;
+}
+
+.setting-bar:hover{
+    border: 2px #14ff00 solid;
+}
+
+
+.statistics{
+    grid-row: 1;
+    grid-column: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+
+}
+
+.statistics > div{
+    padding-top: 20px;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border-radius: 5px;
+    flex: 1;
+    border: none;
+    background-color: #001239;
+    font-family: 'roboto mono', monospace;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    transition: ease-out 0.3s;
+    gap: 15px;
+}
+
+
+.display.user{
+    color: #ffffff;
+    font-family: 'roboto mono', monospace;
+}
+
+.user.number{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.user.score{
+    font-size: 32px;
+    font-weight: bold;
+    color: #14ff00;
+    text-shadow: rgba(20, 255, 0, 0.57) 1px 1px 20px;
+}
+
+.turn-bar{
+    grid-row: 2;
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'roboto mono', monospace;
+    gap: 5px;
+}
+
+.turn-bar > p{
+    font-size: 16px;
+    color: #14ff00;
+    text-shadow: rgba(20, 255, 0, 0.57) 1px 1px 20px;
+}
+
+.turn-bar > i{
+    color: #ffffff;
+    font-size: 45px;
+    text-shadow: rgb(243, 165, 20) 1px 1px 20px;
+}
+
+div[class$="x"] {
+    border: #14bff3 2px solid;
+}
+
+div[class$="o"] {
+    border: #f3a514 2px solid;
+}
+
+.start-menu{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 16, 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    pointer-events: none; /* Prevent interaction when hidden */
+    transition: opacity 1s ease-out;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.start-setting{
+    width: 40%;
+    height: 50%;
+    border-radius: 10px;
+    background-color: #01112BFF;
+    border: white 1px solid;
+    box-shadow: 2px 2px 80px rgba(12, 12, 112, 0.68);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.start-setting > h3{
+    color: #14ff00;
+    font-size: 20px;
+    font-family: 'roboto mono', monospace;
+    text-shadow: rgba(20, 255, 0, 0.57) 1px 1px 20px;
+}
+
+.choose-player{
+    width: 70%;
+    height: 35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #011939;
+    border: white 2px solid;
+    border-radius: 12px;
+}
+
+.choose-player > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.player > i{
+    color: #ffffff;
+    font-size: 95px;
+}
+
+
+.setting{
+    width: 40%;
+    height: 12%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #14ff00;
+    text-shadow: rgba(20, 255, 0, 0.57) 1px 1px 20px;
+    font-family: 'roboto mono', monospace;
+    font-size: 16px;
+    gap: 4px;
+}
+
+/* Chrome, Safari, Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Optional: Remove arrows in modern browsers */
+input[type="number"] {
+    appearance: textfield;
+}
+
+.round-input{
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 4px;
+    color: white;
+    font-family: 'roboto mono', monospace;
+    font-size: 24px;
+    border-radius: 8px;
+    border: 2px white solid;
+    outline: none;
+}
+
+.start-btn{
+    width: 40%;
+    height: 12%;
+    border-radius: 8px;
+    background-color: #14ff00;
+    font-family: 'roboto mono', monospace;
+    font-size: 18px;
+    color: black;
+    box-shadow: rgba(20, 255, 0, 0.57) 1px 1px 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    outline: none;
+    border: none;
+    transition: ease-out 0.3s;
+}
+
+.start-btn:hover{
+    background-color: #41ff00;
+    box-shadow: rgb(25, 255, 0) 1px 1px 20px;
+    letter-spacing: 3px;
+}
+
+.display.user > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.score-sub{
+    color: white;
+    font-size: 12px;
+}
